@@ -17,28 +17,24 @@ export default function Navigation() {
     ];
   
     return (
-      <nav className="fixed top-0 w-full bg-background border-b">
-        {/* <div className="container max-w-7xl mx-auto"> */}
-          <div className="flex h-14 items-center space-x-4 justify-center">
-            {navItems.map((item) => (
-              <Button
-                key={item.href}
-                variant="ghost"
-                asChild
-                className={`text-xs flex flex-col items-between justify-between gap-2 h-full ${
-                  pathname === item.href
-                    ? ""
-                    : "text-muted-foreground"
-                }`}
-              > 
-                <Link href={item.href}>
-                  {item.icon}
-                  {item.label}
-                </Link>
-              </Button>
-            ))}
-          </div>
-        {/* </div> */}
+      <nav className="sticky bottom-0 w-full h-14 bg-background border-t flex items-center justify-center space-x-4">
+        {navItems.map((item) => (
+          <Button
+            key={item.href}
+            variant="ghost"
+            asChild
+            className={`text-xs flex flex-col items-between justify-between gap-2 h-full ${
+              pathname === item.href
+                ? ""
+                : "text-muted-foreground"
+            }`}
+          > 
+            <Link href={item.href}>
+              {item.icon}
+              {item.label}
+            </Link>
+          </Button>
+        ))}
       </nav>
     );
   }

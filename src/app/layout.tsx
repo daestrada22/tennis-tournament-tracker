@@ -35,10 +35,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navigation />
-          <main className="flex min-h-screen flex-col items-center justify-center pt-14">
-            {children}
-          </main>
+          <div className="min-h-screen flex flex-col">
+            <main className="flex-1 mx-auto w-full max-w-3xl px-4 py-8 overflow-y-auto">
+              {children}
+            </main>
+            <Navigation />
+          </div>
         </ThemeProvider>
       </body>
     </html>
