@@ -1,15 +1,16 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function Home() {
+export default function RootPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-100">
-      <div className="container max-w-7xl px-4 py-8 text-center">
-        <h1 className="text-4xl font-bold text-slate-900 mb-6">Hello, tennis world</h1>
-        <p className="text-slate-600 mb-6">
-          Welcome to the tennis world.
-        </p>
-        <Button variant="default">Get Started</Button>
-      </div>
-    </main>
+    <div className="container max-w-7xl px-4 py-8 text-center">
+      <h1 className="text-4xl font-bold mb-6">Hello, tennis world</h1>
+      <p className="mb-6">
+        Welcome to the tennis world.
+      </p>
+      <Button variant="default" asChild>
+        <Link href="/home">Get Started</Link>
+      </Button>
+    </div>
   );
 }
